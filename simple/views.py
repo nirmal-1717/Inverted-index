@@ -3,6 +3,7 @@ from .models import Search, Find
 from django.contrib import messages
 import re
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import dj_database_url 
 
 
 def dash_board(request):
