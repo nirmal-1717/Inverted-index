@@ -1,0 +1,51 @@
+{% load static %}
+
+<html>
+    <head>
+      <title>Task</title>
+      <link rel="stylesheet" type="text/css" href= "{% static 'style2.css' %}"> 
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+      
+        <h1 id="find">Simple Searching project</h1>
+      <div id="box6">
+        <a href=" /"> <button id="btn5">Back</button></a>
+      </div>
+        
+      <form action="/next" method="POST">
+            {% csrf_token %}
+        <div id="box">
+          <input id="text" type="text" placeholder="Search the text here...." name="search">
+          <button id="btn3">Search</button>
+        </div>
+      </form>
+      <div id="btn6">
+        <abbr title="Clear all the paragraph"> <a href="clear"> <button id="btn4">Clear</button></a> </abbr>
+      </div>
+   
+     
+     
+      <div id="box4">
+            {% for valid in valids %}
+            <p id="box3" class="highlighted">  {{valid.text}}  </p>
+            {% endfor %}
+      </div>
+
+      <div>
+          {% for emp in empty %}
+          <p id="box3" class="highlighted">  Please serach something</p>
+          {% endfor %}
+      </div>
+
+      <div>
+        {% for message in messages %}
+        <p id="box3" class="highlighted">  {{message}}  </p>
+        {% endfor %}
+      </div>
+
+      
+    </body>
+</html>

@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+    <head>
+        <title>Task</title>
+        <link rel="stylesheet" type="text/css" href= "{% static 'style1.css' %}"> 
+    </head>
+    <body>
+        <h1 id="simple">Simple Searching project</h1>
+        <div id="box">
+            <form action="/" method="post">
+                {% csrf_token %}
+                <label id="label">To submit your paragraph :</label>
+                <span id="box3"><textarea id="area" rows="4" cols="50"
+                name="comment" placeholder="Enter text here..."></textarea> </span>
+                <button id="btn1">Submit</button>
+            </form>
+        </div>
+        <a href="/next"><button id="btn2">Search Page</button></a>        
+    </body>
+</html>
